@@ -22,6 +22,7 @@ class Node:
     def set_next(self, next):
         self.next = next
 
+
 class QueueLinked:
 
     def __init__(self, capacity):
@@ -61,11 +62,14 @@ class QueueLinked:
         # and raises an error otherwise
         if self.is_empty():
             raise IndexError
+        elif self.num_items == 1:
+            data = self.front.get_data()
+            self.front = self.end = None
         else:
             data = self.front.get_data()
             self.front = self.front.get_next()
-            self.num_items -= 1
-            return data
+        self.num_items -= 1
+        return data
 
 
 class QueueArray:

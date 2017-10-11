@@ -21,6 +21,7 @@ class TestLab3(unittest.TestCase):
         queue.enqueue(1)
         self.assertFalse(queue.is_empty())
 
+
     def test_is_full_1(self):
         # Creates a queue and fills it, makes sure its full
         queue = queues.QueueLinked(5)
@@ -33,12 +34,14 @@ class TestLab3(unittest.TestCase):
         queue = queues.QueueLinked(10)
         self.assertFalse(queue.is_full())
 
+
     def test_num_in_queue_1(self):
         # Creates a queue and adds 4 things, makes sure size is four
         queue = queues.QueueLinked(5)
         for i in range(4):
             queue.enqueue(i)
         self.assertEqual(queue.num_in_queue(), 4)
+
 
     def test_enqueue_1(self):
         # Creates a queue, adds one thing, checks size, adds another, checks again
@@ -55,6 +58,7 @@ class TestLab3(unittest.TestCase):
             queue.enqueue(i)
         with self.assertRaises(IndexError):
             queue.enqueue(1)
+
 
     def test_dequeue_1(self):
         # Creates a queue, adds two things, makes sure they are removed correctly 
@@ -85,6 +89,7 @@ class TestLab3(unittest.TestCase):
         queue.enqueue(1)
         self.assertFalse(queue.is_empty())
 
+
     def test_array_is_full_1(self):
         # Creates a queue and fills it, makes sure its full
         queue = queues.QueueArray(5)
@@ -97,12 +102,14 @@ class TestLab3(unittest.TestCase):
         queue = queues.QueueArray(10)
         self.assertFalse(queue.is_full())
 
+
     def test_array_num_in_queue_1(self):
         # Creates a queue and adds 4 things, makes sure size is four
         queue = queues.QueueArray(5)
         for i in range(4):
             queue.enqueue(i)
         self.assertEqual(queue.num_in_queue(), 4)
+
 
     def test_array_enqueue_1(self):
         # Creates a queue, adds one thing, checks size, adds another, checks again
@@ -119,6 +126,7 @@ class TestLab3(unittest.TestCase):
             queue.enqueue(i)
         with self.assertRaises(IndexError):
             queue.enqueue(1)
+
 
     def test_array_dequeue_1(self):
         # Creates a queue, adds two things, makes sure they are removed correctly 
